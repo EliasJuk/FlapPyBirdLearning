@@ -91,3 +91,6 @@ class Passaro:
 
   def get_mask(self):
     pygame.mask.from_surface(self.imagem)
+
+  class Cano:
+    pass
