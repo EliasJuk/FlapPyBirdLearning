@@ -134,3 +134,6 @@ class Passaro:
         return True
       else:
         return False
+
+class Chao:
+  pass
