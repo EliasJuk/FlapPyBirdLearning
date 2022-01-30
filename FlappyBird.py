@@ -92,7 +92,7 @@ class Passaro:
     tela.blit(imagem_rotacionada, retangulo.topleft)
 
   def get_mask(self):
-    pygame.mask.from_surface(self.imagem)
+    return pygame.mask.from_surface(self.imagem)
 
 class Cano:
   DISTANCIA = 200
@@ -105,7 +105,7 @@ class Cano:
     self.pos_base = 0
     self.CANO_TOPO = pygame.transform.flip(IMAGEM_CANO, False, True)
     self.CANO_BASE = IMAGEM_CANO
-    self.passou_cano = False
+    self.passou = False
     self.definir_altura()
 
   def definir_altura(self):
@@ -170,7 +170,7 @@ def desenhar_tela(tela, passaros, canos, chao, pontos):
   for cano in canos:
     cano.desenhar(tela)
 
-  texto = FONT_PONTOS.render(f"Pontuação: {pontos}", 1, (255, 255, 255))
+  texto = FONTE_PONTOS.render(f"Pontuação: {pontos}", 1, (255, 255, 255))
   tela.blit(texto, (TELA_LARGURA - 10 - texto.get_width(), 10))
   chao.desenhar(tela)
   pygame.display.update()
