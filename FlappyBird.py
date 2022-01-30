@@ -217,13 +217,13 @@ def main():
           adicionar_cano = True
       cano.mover()
       if cano.x + cano.CANO_TOPO.get_width() < 0:
-        remover_cano.append(cano)
+        remover_canos.append(cano)
 
     if adicionar_cano:
       pontos += 1
       canos.append(Cano(600))
-    for canos in remover_canos:
-      cano.remove(cano)
+    for cano in remover_canos:
+      canos.remove(cano)
 
     # excluir passaro se ele sair fora da tela
     for i, passaro in enumerate(passaros):
